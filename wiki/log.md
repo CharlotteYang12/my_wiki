@@ -31,3 +31,15 @@ Append-only activity log for ingests, saved queries, and maintenance passes.
 ## [2026-05-16] maintenance | Add financing stages
 
 - Added a financing stage column to `wiki/巨头公司融资.md`.
+
+## [2026-05-25] ingest | DreamerV4 notes
+
+- Ingested `raw/assets/dreamerv4.md` into `wiki/sources/dreamerv4.md`.
+- Added concept pages: `wiki/concepts/World Model Imagination Training.md`, `wiki/concepts/PMPO.md`, and `wiki/concepts/Shortcut Models.md`.
+- Added entity page: `wiki/entities/DreamerV4.md`.
+- Updated `wiki/index.md` to include the new source, concepts, and entity links.
+
+## [2026-05-25] maintenance | Consolidate wiki images
+
+- Moved all wiki image files into `wiki/assets/`.
+- Updated image references in `wiki/bfm-zero.md`, `wiki/agent-react.md`, and `wiki/dreamerv4.md` to `assets/...` paths.
