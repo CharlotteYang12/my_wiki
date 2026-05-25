@@ -1,45 +1,55 @@
-# Wiki Log
+# Wiki 日志
 
-Append-only activity log for ingests, saved queries, and maintenance passes.
+这个文件按时间记录 wiki 的摄取、整理、维护和结构调整。
 
-## [2026-05-14] setup | Initialize LLM Wiki
+## [2026-05-14] 初始化 | 建立 LLM Wiki
 
-- Created the initial wiki directory structure.
-- Added `AGENTS.md` to define maintenance rules.
-- Added `wiki/index.md` and `wiki/log.md`.
+- 创建初始 wiki 目录结构。
+- 添加维护规则文件。
+- 添加 `wiki/index.md` 和 `wiki/log.md`。
 
-## [2026-05-16] maintenance | Rewrite giant company financing page
+## [2026-05-16] 维护 | 整理巨头公司融资页
 
-- Converted `wiki/巨头公司融资.md` from comma-separated notes into a concise Markdown table.
-- Updated `wiki/index.md` with the maintained page entry.
+- 将 `wiki/巨头公司融资.md` 从零散记录整理成 Markdown 表格。
+- 更新索引中的相关条目。
 
-## [2026-05-16] maintenance | Verify commercial data
+## [2026-05-16] 维护 | 校验商业数据
 
-- Checked public sources for valuation, financing, revenue, order, production, and IPO claims in `wiki/巨头公司融资.md`.
-- Rewrote the page as a verification table with source links and confidence notes.
+- 检查 `wiki/巨头公司融资.md` 中的估值、融资、营收、订单、量产和 IPO 信息。
+- 将页面改写为带来源和置信度说明的资料表。
 
-## [2026-05-16] maintenance | Restructure financing table
+## [2026-05-16] 维护 | 重构融资表结构
 
-- Removed verification and correction columns from `wiki/巨头公司融资.md`.
-- Split technical route and product information into standalone columns.
+- 移除验证列和修正列。
+- 将技术路线和产品信息拆成独立列。
 
-## [2026-05-16] maintenance | Normalize valuation currency
+## [2026-05-16] 维护 | 统一估值口径
 
-- Bolded company valuation figures in `wiki/巨头公司融资.md`.
-- Converted RMB valuation references to approximate USD values.
+- 加粗公司估值数字。
+- 将人民币估值粗略折算成美元口径。
 
-## [2026-05-16] maintenance | Add financing stages
+## [2026-05-16] 维护 | 添加融资阶段
 
-- Added a financing stage column to `wiki/巨头公司融资.md`.
+- 为 `wiki/巨头公司融资.md` 增加融资阶段列。
 
-## [2026-05-25] ingest | DreamerV4 notes
+## [2026-05-25] 摄取 | DreamerV4 笔记
 
-- Ingested `raw/assets/dreamerv4.md` into `wiki/sources/dreamerv4.md`.
-- Added concept pages: `wiki/concepts/World Model Imagination Training.md`, `wiki/concepts/PMPO.md`, and `wiki/concepts/Shortcut Models.md`.
-- Added entity page: `wiki/entities/DreamerV4.md`.
-- Updated `wiki/index.md` to include the new source, concepts, and entity links.
+- 将 DreamerV4 相关原始笔记整理到 wiki。
+- 抽取世界模型、想象训练、PMPO 和 Shortcut Models 等重点概念。
+- 更新索引条目。
 
-## [2026-05-25] maintenance | Consolidate wiki images
+## [2026-05-25] 维护 | 集中图片资源
 
-- Moved all wiki image files into `wiki/assets/`.
-- Updated image references in `wiki/bfm-zero.md`, `wiki/agent-react.md`, and `wiki/dreamerv4.md` to `assets/...` paths.
+- 将 wiki 中的图片集中到 `wiki/assets/`。
+- 更新 `wiki/bfm-zero.md`、`wiki/agent-react.md` 和 `wiki/dreamerv4.md` 中的图片引用路径。
+
+## [2026-05-25] 维护 | 添加索引标签并重建目录
+
+- 重新读取当前 wiki 页面。
+- 为现有页面添加类别和索引标签。
+- 按类别重建 `wiki/index.md`，方便后续浏览和检索。
+
+## [2026-05-25] 维护 | 调整索引信息位置
+
+- 将各 wiki 页面顶部的类别和索引标签移动到页面末尾。
+- 统一使用 `## 索引信息` 小节承载页面分类与标签。

@@ -1,4 +1,4 @@
-# agent 简介
+﻿# agent 简介
 
 
 
@@ -81,3 +81,9 @@ Agent 技术通常被描述为 **LLM + 规划 (Planning) + 记忆 (Memory) + 工
 | **3 (提升)** | [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | 介绍如何通过自我反思提升 Agent 的成功率。 |
 | **4 (前沿)** | [Memory in the Age of AI Agents](https://arxiv.org/abs/2512.13564) | 2025 年末最新的 Agent 记忆综述，涵盖了从向量到图谱的演进。 |
 | **5 (工程)** | [OpenClaw-RL: Train Any Agent Simply by Talking](https://arxiv.org/abs/2603.10165) | 学习如何通过强化学习优化特定框架下的 Agent 行为。 |
+
+## 索引信息
+
+> 类别：综述 / 技术框架  
+> 索引标签：#Agent #LLM #规划 #工具调用 #记忆 #反思 #多智能体 #工程框架
+

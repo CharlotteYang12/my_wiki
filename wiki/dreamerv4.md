@@ -1,4 +1,4 @@
-# Training Agents Inside of Scalable World Models
+﻿# Training Agents Inside of Scalable World Models
 
 ```
 高精度世界模型 + 离线强化学习 第一个挖到钻石的模型！ 数据利用效率也更高。
@@ -156,3 +156,9 @@ PMPO 算法通过**优势函数 (Advantage)** 的正负号来决定是对动作�
 *   **极高效率：** 在实践中，这种模型只需要 **2 或 4 个前向传播步骤** 就能生成高质量样本，而普通扩散模型通常需要 64 步以上。
 
 ---
+
+## 索引信息
+
+> 类别：论文笔记 / 强化学习 / 世界模型  
+> 索引标签：#DreamerV4 #世界模型 #离线强化学习 #想象训练 #PMPO #ShortcutModels #Minecraft
+
