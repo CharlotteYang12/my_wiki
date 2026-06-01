@@ -53,3 +53,10 @@
 
 - 将各 wiki 页面顶部的类别和索引标签移动到页面末尾。
 - 统一使用 `## 索引信息` 小节承载页面分类与标签。
+
+## [2026-06-01] 摄取 | EmbodiedMidtrain 与 FD-loss 笔记
+
+- 将 `wiki/EmbodiedMidtrain260421.md` 纳入索引，归入机器人控制 / VLA 方向。
+- 将 `wiki/VisualGenerationFDLossfor.md` 纳入索引，归入视觉生成方向。
+- 为两篇页面补充末尾 `## 索引信息`。
+- 将相关图片统一放入 `wiki/assets/` 并更新页面引用。
