@@ -1,75 +1,74 @@
 # LLM Wiki
 
-A pattern for building personal knowledge bases using LLMs.
+一种使用 LLM 构建个人知识库的模式。
 
-This is an idea file, it is designed to be copy pasted to your own LLM Agent (e.g. OpenAI Codex, Claude Code, OpenCode / Pi, or etc.). Its goal is to communicate the high level idea, but your agent will build out the specifics in collaboration with you.
+这是一个「思路文件」，设计目标是让你可以直接复制粘贴给自己的 LLM Agent（例如 OpenAI Codex、Claude Code、OpenCode / Pi 等）。它的作用是传达高层理念，具体实现细节由你的 Agent 和你协作落地。
 
-## The core idea
+## 核心思路
 
-Most people's experience with LLMs and documents looks like RAG: you upload a collection of files, the LLM retrieves relevant chunks at query time, and generates an answer. This works, but the LLM is rediscovering knowledge from scratch on every question. There's no accumulation. Ask a subtle question that requires synthesizing five documents, and the LLM has to find and piece together the relevant fragments every time. Nothing is built up. NotebookLM, ChatGPT file uploads, and most RAG systems work this way.
+大多数人把 LLM 和文档结合使用的方式，基本就是 RAG：你上传一批文件，LLM 在提问时检索相关片段并生成答案。这个方式可用，但它有个问题：LLM 每次回答都在从头「重新发现」知识，无法持续积累。遇到一个需要综合 5 篇文档的复杂问题，它每次都得重新检索、重新拼接相关碎片。不会越用越有沉淀。NotebookLM、ChatGPT 文件上传，以及多数 RAG 系统都属于这一类。
 
-The idea here is different. Instead of just retrieving from raw documents at query time, the LLM **incrementally builds and maintains a persistent wiki** — a structured, interlinked collection of markdown files that sits between you and the raw sources. When you add a new source, the LLM doesn't just index it for later retrieval. It reads it, extracts the key information, and integrates it into the existing wiki — updating entity pages, revising topic summaries, noting where new data contradicts old claims, strengthening or challenging the evolving synthesis. The knowledge is compiled once and then *kept current*, not re-derived on every query.
+这里的思路不同。不是只在提问时从原始文档里检索，而是让 LLM **增量构建并维护一个持续存在的 wiki** —— 它是一组结构化、互相链接的 markdown 文件，位于你和原始资料之间。当你加入一个新来源时，LLM 不只是做索引等着以后检索，而是会真正阅读、提取关键信息，并整合进现有 wiki：更新实体页面、修订主题摘要、标注新数据与旧结论的冲突、强化或挑战当前综合结论。知识是一次编译、持续更新，而不是每次查询都重新推导。
 
-This is the key difference: **the wiki is a persistent, compounding artifact.** The cross-references are already there. The contradictions have already been flagged. The synthesis already reflects everything you've read. The wiki keeps getting richer with every source you add and every question you ask.
+关键差异在这：**wiki 是一个可持续、可复利的产物。** 交叉引用已经在那里，矛盾点已经被标注，综合结论已经反映你读过的内容。每增加一个来源、每提出一个问题，wiki 都会继续变得更丰富。
 
-You never (or rarely) write the wiki yourself — the LLM writes and maintains all of it. You're in charge of sourcing, exploration, and asking the right questions. The LLM does all the grunt work — the summarizing, cross-referencing, filing, and bookkeeping that makes a knowledge base actually useful over time. In practice, I have the LLM agent open on one side and Obsidian open on the other. The LLM makes edits based on our conversation, and I browse the results in real time — following links, checking the graph view, reading the updated pages. Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase.
+你几乎不需要自己写 wiki —— 由 LLM 负责写和维护。你负责找资料、探索方向、提出好问题。LLM 负责所有脏活累活：总结、交叉引用、归档、维护，这些才是知识库长期可用的关键。实践中，我会一边开着 LLM Agent，一边开着 Obsidian。LLM 根据对话实时修改文件，我在旁边实时浏览结果：点链接、看图谱、读更新后的页面。Obsidian 是 IDE，LLM 是程序员，wiki 是代码库。
 
-This can apply to a lot of different contexts. A few examples:
+这个模式适用于很多场景，例如：
 
-- **Personal**: tracking your own goals, health, psychology, self-improvement — filing journal entries, articles, podcast notes, and building up a structured picture of yourself over time.
-- **Research**: going deep on a topic over weeks or months — reading papers, articles, reports, and incrementally building a comprehensive wiki with an evolving thesis.
-- **Reading a book**: filing each chapter as you go, building out pages for characters, themes, plot threads, and how they connect. By the end you have a rich companion wiki. Think of fan wikis like [Tolkien Gateway](https://tolkiengateway.net/wiki/Main_Page) — thousands of interlinked pages covering characters, places, events, languages, built by a community of volunteers over years. You could build something like that personally as you read, with the LLM doing all the cross-referencing and maintenance.
-- **Business/team**: an internal wiki maintained by LLMs, fed by Slack threads, meeting transcripts, project documents, customer calls. Possibly with humans in the loop reviewing updates. The wiki stays current because the LLM does the maintenance that no one on the team wants to do.
-- **Competitive analysis, due diligence, trip planning, course notes, hobby deep-dives** — anything where you're accumulating knowledge over time and want it organized rather than scattered.
+- **个人管理**：跟踪目标、健康、心理、自我提升，把日记、文章、播客笔记归档，逐步形成结构化的自我画像。
+- **研究**：围绕一个主题持续数周或数月深挖，阅读论文、文章、报告，增量构建一套带有演进观点的完整 wiki。
+- **读书**：边读边归档每章内容，构建角色、主题、剧情线及其关联页面。读完后你会得到一个高质量伴读 wiki。可以参考类似 [Tolkien Gateway](https://tolkiengateway.net/wiki/Main_Page) 的粉丝 wiki：由志愿者多年维护，涵盖角色、地点、事件、语言的海量互链页面。你也可以在个人维度实现类似效果，由 LLM 负责所有交叉引用和维护。
+- **企业/团队**：由 LLM 维护内部 wiki，输入源包括 Slack 讨论、会议纪要、项目文档、客户通话记录。也可加入人工复核环节。因为维护工作由 LLM 承担，wiki 能持续保持最新。
+- **竞品分析、尽调、旅行规划、课程笔记、兴趣深挖** —— 任何需要长期累积知识且希望系统化组织而非零散堆放的场景都适用。
 
-## Architecture
+## 架构
 
-There are three layers:
+整体分三层：
 
-**Raw sources** — your curated collection of source documents. Articles, papers, images, data files. These are immutable — the LLM reads from them but never modifies them. This is your source of truth.
+**原始资料（Raw sources）** —— 你筛选后的源文档集合：文章、论文、图片、数据文件等。它们是不可变层，LLM 只读取不修改。这是你的事实来源。
 
-**The wiki** — a directory of LLM-generated markdown files. Summaries, entity pages, concept pages, comparisons, an overview, a synthesis. The LLM owns this layer entirely. It creates pages, updates them when new sources arrive, maintains cross-references, and keeps everything consistent. You read it; the LLM writes it.
+**Wiki 层（The wiki）** —— 由 LLM 生成的 markdown 文件目录。包括摘要页、实体页、概念页、对比页、总览页、综合页。这个层完全由 LLM 负责：创建页面、在新来源到来时更新页面、维护交叉引用、保持一致性。你负责阅读，LLM 负责写入。
 
-**The schema** — a document (e.g. CLAUDE.md for Claude Code or AGENTS.md for Codex) that tells the LLM how the wiki is structured, what the conventions are, and what workflows to follow when ingesting sources, answering questions, or maintaining the wiki. This is the key configuration file — it's what makes the LLM a disciplined wiki maintainer rather than a generic chatbot. You and the LLM co-evolve this over time as you figure out what works for your domain.
+**规范层（The schema）** —— 一份规则文档（例如 Claude Code 用 `CLAUDE.md`，Codex 用 `AGENTS.md`），用于告诉 LLM：wiki 结构如何组织、约定是什么、在摄入来源/回答问题/维护 wiki 时要遵循哪些流程。它是最关键的配置文件，决定 LLM 是「有纪律的 wiki 维护者」而不是「泛用聊天机器人」。随着你不断实践，你和 LLM 会一起迭代这份规范。
 
-## Operations
+## 运行流程
 
-**Ingest.** You drop a new source into the raw collection and tell the LLM to process it. An example flow: the LLM reads the source, discusses key takeaways with you, writes a summary page in the wiki, updates the index, updates relevant entity and concept pages across the wiki, and appends an entry to the log. A single source might touch 10-15 wiki pages. Personally I prefer to ingest sources one at a time and stay involved — I read the summaries, check the updates, and guide the LLM on what to emphasize. But you could also batch-ingest many sources at once with less supervision. It's up to you to develop the workflow that fits your style and document it in the schema for future sessions.
+**摄入（Ingest）。** 你把新来源放入原始资料目录，然后让 LLM 处理。典型流程是：LLM 读取来源、与你讨论关键结论、在 wiki 写摘要页、更新索引、更新相关实体页和概念页，并在日志中追加记录。单个来源可能会影响 10-15 个 wiki 页面。我个人偏好一次摄入一个来源并保持参与：读摘要、检查更新、指导 LLM 强调重点。你也可以在监督较少的情况下批量摄入。关键是形成适合你风格的流程，并记录在 schema 中以便后续会话复用。
 
-**Query.** You ask questions against the wiki. The LLM searches for relevant pages, reads them, and synthesizes an answer with citations. Answers can take different forms depending on the question — a markdown page, a comparison table, a slide deck (Marp), a chart (matplotlib), a canvas. The important insight: **good answers can be filed back into the wiki as new pages.** A comparison you asked for, an analysis, a connection you discovered — these are valuable and shouldn't disappear into chat history. This way your explorations compound in the knowledge base just like ingested sources do.
+**查询（Query）。** 你围绕 wiki 提问。LLM 会检索相关页面、阅读并给出带引用的综合答案。答案形式可随问题变化：markdown 页面、对比表、幻灯片（Marp）、图表（matplotlib）、canvas 等。一个重要洞见是：**优质答案应回写到 wiki，成为新页面。** 你提出的对比、分析、发现的新连接都很有价值，不应只留在聊天记录里。这样你的探索过程和来源摄入一样，会在知识库中持续复利。
 
-**Lint.** Periodically, ask the LLM to health-check the wiki. Look for: contradictions between pages, stale claims that newer sources have superseded, orphan pages with no inbound links, important concepts mentioned but lacking their own page, missing cross-references, data gaps that could be filled with a web search. The LLM is good at suggesting new questions to investigate and new sources to look for. This keeps the wiki healthy as it grows.
+**巡检（Lint）。** 定期让 LLM 给 wiki 做健康检查。重点看：页面间是否有冲突、是否存在被新来源推翻的陈旧结论、是否有无入链孤儿页、是否有重要概念被提及却没有独立页面、是否缺少交叉引用、是否存在可通过网页检索补齐的数据空缺。LLM 也很擅长给出下一步可探索的问题和可补充的来源建议，帮助 wiki 在增长过程中保持健康。
 
-## Indexing and logging
+## 索引与日志
 
-Two special files help the LLM (and you) navigate the wiki as it grows. They serve different purposes:
+随着 wiki 变大，有两个特殊文件能帮助 LLM（以及你）更高效导航。它们的作用不同：
 
-**index.md** is content-oriented. It's a catalog of everything in the wiki — each page listed with a link, a one-line summary, and optionally metadata like date or source count. Organized by category (entities, concepts, sources, etc.). The LLM updates it on every ingest. When answering a query, the LLM reads the index first to find relevant pages, then drills into them. This works surprisingly well at moderate scale (~100 sources, ~hundreds of pages) and avoids the need for embedding-based RAG infrastructure.
+**`index.md`** 面向内容。它是 wiki 的总目录：每个页面附带链接、一行摘要，以及可选元数据（如日期、来源数），并按类别组织（实体、概念、来源等）。LLM 在每次摄入后都会更新它。回答问题时，LLM 先读索引定位相关页面，再深入阅读。这个方式在中等规模（约 100 个来源、数百页面）下效果很好，且可避免搭建基于 embedding 的 RAG 基础设施。
 
-**log.md** is chronological. It's an append-only record of what happened and when — ingests, queries, lint passes. A useful tip: if each entry starts with a consistent prefix (e.g. `## [2026-04-02] ingest | Article Title`), the log becomes parseable with simple unix tools — `grep "^## \[" log.md | tail -5` gives you the last 5 entries. The log gives you a timeline of the wiki's evolution and helps the LLM understand what's been done recently.
+**`log.md`** 面向时间。它是追加式时间记录：何时发生了什么（摄入、查询、巡检等）。一个实用技巧是：如果每条记录都用统一前缀开头（例如 `## [2026-04-02] ingest | Article Title`），就能用简单 unix 工具解析日志 —— `grep "^## \[" log.md | tail -5` 可以直接拿到最近 5 条。日志能提供 wiki 演进时间线，也能帮助 LLM 理解近期做过什么。
 
-## Optional: CLI tools
+## 可选：CLI 工具
 
-At some point you may want to build small tools that help the LLM operate on the wiki more efficiently. A search engine over the wiki pages is the most obvious one — at small scale the index file is enough, but as the wiki grows you want proper search. [qmd](https://github.com/tobi/qmd) is a good option: it's a local search engine for markdown files with hybrid BM25/vector search and LLM re-ranking, all on-device. It has both a CLI (so the LLM can shell out to it) and an MCP server (so the LLM can use it as a native tool). You could also build something simpler yourself — the LLM can help you vibe-code a naive search script as the need arises.
+在某个阶段，你可能会想做一些小工具，让 LLM 更高效地操作 wiki。最直观的是 wiki 搜索引擎：规模小时用索引文件就够了，但规模变大后你会需要更正规的检索。一个不错的选择是 [qmd](https://github.com/tobi/qmd)：本地 markdown 搜索引擎，支持混合 BM25/向量检索和 LLM 重排，全部在本机运行。它既有 CLI（LLM 可通过 shell 调用），也有 MCP server（LLM 可当作原生工具调用）。你也可以先做更简单的版本 —— 需要时让 LLM 帮你快速写一个朴素搜索脚本即可。
 
-## Tips and tricks
+## 实用技巧
 
-- **Obsidian Web Clipper** is a browser extension that converts web articles to markdown. Very useful for quickly getting sources into your raw collection.
-- **Download images locally.** In Obsidian Settings → Files and links, set "Attachment folder path" to a fixed directory (e.g. `raw/assets/`). Then in Settings → Hotkeys, search for "Download" to find "Download attachments for current file" and bind it to a hotkey (e.g. Ctrl+Shift+D). After clipping an article, hit the hotkey and all images get downloaded to local disk. This is optional but useful — it lets the LLM view and reference images directly instead of relying on URLs that may break. Note that LLMs can't natively read markdown with inline images in one pass — the workaround is to have the LLM read the text first, then view some or all of the referenced images separately to gain additional context. It's a bit clunky but works well enough.
-- **Obsidian's graph view** is the best way to see the shape of your wiki — what's connected to what, which pages are hubs, which are orphans.
-- **Marp** is a markdown-based slide deck format. Obsidian has a plugin for it. Useful for generating presentations directly from wiki content.
-- **Dataview** is an Obsidian plugin that runs queries over page frontmatter. If your LLM adds YAML frontmatter to wiki pages (tags, dates, source counts), Dataview can generate dynamic tables and lists.
-- The wiki is just a git repo of markdown files. You get version history, branching, and collaboration for free.
+- **Obsidian Web Clipper** 是一个把网页文章转成 markdown 的浏览器插件，非常适合快速把来源放入原始资料目录。
+- **把图片下载到本地。** 在 Obsidian `Settings -> Files and links` 中，把 "Attachment folder path" 设为固定目录（例如 `raw/assets/`）。然后在 `Settings -> Hotkeys` 中搜索 "Download"，找到 "Download attachments for current file" 并绑定快捷键（例如 Ctrl+Shift+D）。剪藏文章后按快捷键，即可把图片批量下载到本地。这个操作可选但很有用：LLM 可以直接查看和引用本地图片，而不是依赖可能失效的 URL。要注意，LLM 通常不能在一次读取中同时原生解析「带内联图片的 markdown 全文」。常见做法是先让 LLM 读文本，再单独查看部分或全部引用图片补充上下文。虽然略显笨重，但实际可用。
+- **Obsidian 图谱视图** 是观察 wiki 结构最好的方式：哪些页面互相连接、哪些是枢纽、哪些是孤儿页一目了然。
+- **Marp** 是基于 markdown 的幻灯片格式，Obsidian 有对应插件，适合直接从 wiki 内容生成演示文稿。
+- **Dataview** 是 Obsidian 插件，可基于页面 frontmatter 执行查询。如果 LLM 在 wiki 页加了 YAML frontmatter（标签、日期、来源数等），Dataview 可动态生成表格和列表。
+- wiki 本质上就是一个 markdown 文件的 git 仓库。版本历史、分支、协作能力天然可用。
 
-## Why this works
+## 为什么这套方法有效
 
-The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the bookkeeping. Updating cross-references, keeping summaries current, noting when new data contradicts old claims, maintaining consistency across dozens of pages. Humans abandon wikis because the maintenance burden grows faster than the value. LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass. The wiki stays maintained because the cost of maintenance is near zero.
+维护知识库最枯燥的部分不是阅读或思考，而是「维护事务」：更新交叉引用、保持摘要最新、标注新旧结论冲突、保证几十个页面的一致性。人类放弃 wiki 的常见原因是维护成本增长速度超过了收益。LLM 不会厌烦，不会忘记补交叉引用，还能一次改 15 个文件。维护成本接近零，wiki 才能持续被维护。
 
-The human's job is to curate sources, direct the analysis, ask good questions, and think about what it all means. The LLM's job is everything else.
+人的职责是：筛选来源、引导分析、提出好问题、思考意义。LLM 负责其余大部分执行工作。
 
-The idea is related in spirit to Vannevar Bush's Memex (1945) — a personal, curated knowledge store with associative trails between documents. Bush's vision was closer to this than to what the web became: private, actively curated, with the connections between documents as valuable as the documents themselves. The part he couldn't solve was who does the maintenance. The LLM handles that.
+这个思路在精神上接近 Vannevar Bush 的 Memex（1945）：一个个人化、可策展的知识库，文档之间通过联想路径连接。Bush 的愿景比今天的互联网更接近这里：私有、主动策展，而且文档间连接与文档本身同样重要。他当时无法解决的问题是「谁来维护」。LLM 正好补上了这一环。
 
+## 说明
 
-## Note
-
-This document is intentionally abstract. It describes the idea, not a specific implementation. The exact directory structure, the schema conventions, the page formats, the tooling — all of that will depend on your domain, your preferences, and your LLM of choice. Everything mentioned above is optional and modular — pick what's useful, ignore what isn't. For example: your sources might be text-only, so you don't need image handling at all. Your wiki might be small enough that the index file is all you need, no search engine required. You might not care about slide decks and just want markdown pages. You might want a completely different set of output formats. The right way to use this is to share it with your LLM agent and work together to instantiate a version that fits your needs. The document's only job is to communicate the pattern. Your LLM can figure out the rest.
+本文刻意保持抽象。它描述的是模式，而不是某个具体实现。具体目录结构、schema 约定、页面格式、工具链都应由你的领域、偏好和所选 LLM 决定。上面提到的内容全部是可选、可组合的：有用就采纳，不适用就忽略。比如：你的来源可能全是纯文本，那就不需要图片处理；你的 wiki 规模可能很小，仅用索引文件就够，不必上搜索引擎；你可能不关心幻灯片，只想要 markdown 页面；你也可能需要完全不同的一组输出格式。正确用法是把这份文档交给你的 LLM Agent，再与你协作实例化出最适合你的版本。本文唯一任务是传达模式，剩下的可以让 LLM 帮你完成。

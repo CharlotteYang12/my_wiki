@@ -21,12 +21,19 @@
 | --- | --- |
 | [[bfm-zero]] | 机器人运动控制笔记：Unitree G1 的自由度分布、当前观测维度和历史观测维度计算。 |
 | [[EmbodiedMidtrain260421]] | **EmbodiedMidtrain**：通过轻量分类器从 VLM 数据中筛选更接近 VLA 分布的数据，用中段训练提升机器人任务表现。 |
+| [[Embodied_Pi]] | **Pi 0.5 / Pi 0.6**：整理具身智能模型的两阶段训练、RECAP、优势条件化、AR 与 Diffusion 双路动作学习。 |
 
 ## 视觉生成
 
 | 论文 | 摘要 |
 | --- | --- |
 | [[VisualGenerationFDLossfor]] | **Visual Generation FD Loss**：把 FD 从评价指标改造成后训练 loss，通过大样本统计和小 batch 梯度解耦，让一步生成模型在 FD / FID 上显著提升。 |
+
+## 自动驾驶安全
+
+| 论文 | 摘要 |
+| --- | --- |
+| [[gssm]] | **GSSM**：用条件概率分布和极值思想把交通间距转化为风险等级，用轻量神经网络预测环境相关安全标准。 |
 
 ## 其他资料
 

@@ -60,3 +60,10 @@
 - 将 `wiki/VisualGenerationFDLossfor.md` 纳入索引，归入视觉生成方向。
 - 为两篇页面补充末尾 `## 索引信息`。
 - 将相关图片统一放入 `wiki/assets/` 并更新页面引用。
+
+## [2026-06-05] 摄取 | Embodied Pi 与 GSSM 笔记
+
+- 将 `wiki/Embodied_Pi.md` 纳入索引，归入机器人控制 / VLA 方向。
+- 将 `wiki/gssm.md` 纳入索引，归入自动驾驶安全方向。
+- 为两篇页面补充末尾 `## 索引信息`。
+- 确认 `Embodied_Pi.md` 图片引用指向 `wiki/assets/`。
