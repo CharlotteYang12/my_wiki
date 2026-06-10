@@ -67,3 +67,32 @@
 - 将 `wiki/gssm.md` 纳入索引，归入自动驾驶安全方向。
 - 为两篇页面补充末尾 `## 索引信息`。
 - 确认 `Embodied_Pi.md` 图片引用指向 `wiki/assets/`。
+
+## [2026-06-05] 维护 | 按 AGENTS 规则整理工程
+
+- 将 `wiki/rl-selfplay.md` 纳入索引，归入自动驾驶安全方向。
+- 将 `wiki/rl-selfplay.md` 引用的图片移动到 `wiki/assets/` 并修正引用路径。
+- 为 `wiki/rl-selfplay.md` 补充末尾 `## 索引信息`。
+
+## [2026-06-05] 摄取 | SFT、RL 与 OPD 分布视角
+
+- 根据 `raw/assets/sft_rl.md` 中的来源链接生成 `wiki/sft_rl.md`。
+- 将 `wiki/sft_rl.md` 纳入索引，新增“大模型后训练”分类。
+- 为 `wiki/sft_rl.md` 补充末尾 `## 索引信息`。
+
+## [2026-06-05] 维护 | 用完整 HTML 更新 SFT / RL / OPD 页面
+
+- 根据 `raw/SFT, RL, and On-Policy Distillation Through a Distributional Lens _ wh.html` 更新 `wiki/sft_rl.md`。
+- 补充 OPD teacher 实验、RL 少遗忘原因和完整后训练流水线。
+
+## [2026-06-05] 维护 | 为 SFT / RL / OPD 页面补关键图片
+
+- 从完整 HTML 附件中筛选关键图片并复制到 `wiki/assets/`。
+- 在 `wiki/sft_rl.md` 中补充分布示意、OPSD token KL、on-policy 几何、MiMo 对比和 reward/entropy 曲线图。
+
+## [2026-06-09] 摄取 | OAT Ordered Action Tokenization
+
+- 根据 `raw/OAT Ordered Action Tokenization.pdf` 生成 `wiki/oat.md`。
+- 裁剪并引入 Fig.1、Fig.2、Fig.3、Table I、Table III 和 Table V 等关键图表。
+- 将 `wiki/oat.md` 纳入索引，归入机器人控制方向。
+- 为 `wiki/oat.md` 补充末尾 `## 索引信息`。

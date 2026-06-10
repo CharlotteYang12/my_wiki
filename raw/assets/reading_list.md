@@ -7,8 +7,6 @@
 # RL
 perry dong的RL
 
-self play
-
 oat
 
 1000 layer RL
