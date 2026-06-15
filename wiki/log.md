@@ -96,3 +96,24 @@
 - 裁剪并引入 Fig.1、Fig.2、Fig.3、Table I、Table III 和 Table V 等关键图表。
 - 将 `wiki/oat.md` 纳入索引，归入机器人控制方向。
 - 为 `wiki/oat.md` 补充末尾 `## 索引信息`。
+
+## [2026-06-11] 摄取 | Flow-GRPO 与 Q-Guided Flow 策略
+
+- 根据 `raw/Flow-GRPO Training Flow Matching Models via Online RL.pdf` 生成 `wiki/rl-flow_grpo.md`。
+- 根据 `raw/Test-Time Gradient Guidance of Flow Policies in Reinforcement Learning.pdf` 生成 `wiki/rl-test_time_gradient_guidance_flow_policies.md`。
+- 裁剪并引入两篇论文的关键图表，统一放入 `wiki/assets/` 并更新页面引用。
+- 将两篇页面纳入强化学习与世界模型相关索引，并补充末尾 `## 索引信息`。
+
+## [2026-06-11] 维护 | 补齐索引与流程检查
+
+- 更新 `wiki/index.md`，补入 Flow-GRPO、Q-Guided Flow 和 1000 层无监督 RL 的准确摘要。
+- 将 OAT 页面索引从旧文件名 `wiki/oat.md` 修正为 `wiki/EmbodiedOat.md`。
+- 加固 `AGENTS.md` 中的摄取流程：新增或整理 wiki 页面后必须复核目标页面、`wiki/index.md` 和 `wiki/log.md`。
+
+## [2026-06-12] 摄取 | GFT 与 RL 基础
+
+- 根据 `raw/GFT From Imitation to Reward Fine-Tuning with Unbiased Group Advantages and Dynamic Coefficient Rectification.pdf` 生成 `wiki/training-gft.md`。
+- 整理 GFT 对 SFT 的 policy gradient 解释、Group Advantage Learning、Dynamic Coefficient Rectification 和 SFT/GFT/GRPO 兼容性结论。
+- 裁剪并引入 Fig.1、Fig.2、Table 1/2、Fig.3、Fig.4、Table 3/Fig.5、Table 4/5/Fig.6 等关键图表，统一放入 `wiki/assets/`。
+- 新增 `wiki/rl_basic.md`，整理 reward、value、Q、advantage 及常见 RL 方法差异。
+- 将 `wiki/training-gft.md` 和 `wiki/rl_basic.md` 纳入 `wiki/index.md` 的“大模型后训练”分类，并补充末尾 `## 索引信息`。
