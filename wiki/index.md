@@ -23,7 +23,15 @@
 | --- | --- |
 | [[sft_rl]] | **SFT, RL, and On-Policy Distillation Through a Distributional Lens**：从分布塑形角度比较 SFT、RL 和 OPD，解释 on-policy 数据为什么能减少遗忘。 |
 | [[training-gft]] | **GFT: From Imitation to Reward Fine-Tuning**：把 SFT 解释为退化 policy gradient，并用 group advantage 与动态系数修正兼顾知识注入、训练稳定和后续 RL 探索空间。 |
+| [[training-tempo]] | **TEMPO: Scaling Test-time Training for Large Reasoning Models**：把 TTT 写成 EM 式 actor-critic 过程，通过周期性 critic 校准解决 self-reward drift 和 diversity collapse。 |
 | [[rl_basic]] | **RL 基础概念**：区分 reward、value、Q 和 advantage，并梳理 REINFORCE、PPO、Actor-Critic、Q-learning、GRPO 与 Q-Guided Flow 的核心差异。 |
+
+## 训练与优化
+
+| 论文 | 摘要 |
+| --- | --- |
+| [[training-muon_scalable]] | **Muon is Scalable for LLM Training**：Moonshot AI 技术报告，说明 Muon 通过 weight decay、update RMS 校准和分布式实现扩展到 LLM 预训练。 |
+| [[training-muon_not_special]] | **Muon is Not That Special**：用 Freon 和 Kaon 反驳 Muon 的精确谱几何叙事，指出优化效果更依赖 alignment、descent potential 与学习率稳定性。 |
 
 ## 机器人控制
 
@@ -33,12 +41,14 @@
 | [[EmbodiedMidtrain260421]] | **EmbodiedMidtrain**：通过轻量分类器从 VLM 数据中筛选更接近 VLA 分布的数据，用中段训练提升机器人任务表现。 |
 | [[Embodied_Pi]] | **Pi 0.5 / Pi 0.6**：整理具身智能模型的两阶段训练、RECAP、优势条件化、AR 与 Diffusion 双路动作学习。 |
 | [[EmbodiedOat]] | **OAT: Ordered Action Tokenization**：为自回归机器人策略设计有序、可解码、可前缀生成的动作 token，支持 anytime action generation。 |
+| [[EmbodiedGalaxeaG05]] | **Galaxea G0.5**：统一自回归 VLA，让单个 decoder 同时生成 CoT 和 action tokens，并通过 ActionCodec、visual memory 支持跨机器人控制。 |
 
 ## 视觉生成
 
 | 论文 | 摘要 |
 | --- | --- |
 | [[VisualGenerationFDLossfor]] | **Visual Generation FD Loss**：把 FD 从评价指标改造成后训练 loss，通过大样本统计和小 batch 梯度解耦，让一步生成模型在 FD / FID 上显著提升。 |
+| [[flow_matching_5min]] | **Flow Matching in 5 Minutes**：用二维线性插值解释 Flow Matching 的核心直觉，即学习从 source distribution 到 target distribution 的速度场。 |
 
 ## 自动驾驶安全
 

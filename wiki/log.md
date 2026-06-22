@@ -117,3 +117,45 @@
 - 裁剪并引入 Fig.1、Fig.2、Table 1/2、Fig.3、Fig.4、Table 3/Fig.5、Table 4/5/Fig.6 等关键图表，统一放入 `wiki/assets/`。
 - 新增 `wiki/rl_basic.md`，整理 reward、value、Q、advantage 及常见 RL 方法差异。
 - 将 `wiki/training-gft.md` 和 `wiki/rl_basic.md` 纳入 `wiki/index.md` 的“大模型后训练”分类，并补充末尾 `## 索引信息`。
+
+## [2026-06-15] 摄取 | Muon 谱优化器训练笔记
+
+- 根据 `raw/Muon is Scalable for LLM Training.pdf` 生成 `wiki/training-muon_scalable.md`。
+- 根据 `raw/muon is not that special.pdf` 生成 `wiki/training-muon_not_special.md`。
+- 整理 Muon 在 LLM 训练中的 weight decay、update RMS 校准、Distributed Muon、scaling law 与 Moonlight 实验结果。
+- 整理 Freon、Kaon、LMO 框架局限、alignment / descent potential 和 step-size optimality 等机制反思。
+- 裁剪并引入两篇论文的关键图表，统一放入 `wiki/assets/`。
+- 在 `wiki/index.md` 新增“训练与优化”分类，并为页面补充末尾 `## 索引信息`。
+
+## [2026-06-17] 摄取 | Flow Matching 入门
+
+- 根据 `raw/Flow Matching in 5 Minutes _ wh.html` 生成 `wiki/flow_matching_5min.md`。
+- 整理 source / target distribution、二维线性插值、velocity field、训练目标和采样过程。
+- 为页面补充 2D 直线路径示意图，统一放入 `wiki/assets/`。
+- 将 `wiki/flow_matching_5min.md` 纳入 `wiki/index.md` 的“视觉生成”分类，并补充末尾 `## 索引信息`。
+
+## [2026-06-22] 摄取 | TEMPO Test-Time Training
+
+- 根据 `raw/TEMPO Scaling Test-time Training for Large Reasoning Models.pdf` 生成 `wiki/training-tempo.md`。
+- 整理 TEMPO 的 EM 视角、critic recalibration、policy refinement、ELBO 目标和 advantage 设计。
+- 裁剪并引入 Fig.1、Fig.2 / Algorithm 1、Table 1、Fig.3/4、Table 2、Fig.5/6 等关键图表，统一放入 `wiki/assets/`。
+- 将 `wiki/training-tempo.md` 纳入 `wiki/index.md` 的“大模型后训练”分类，并补充末尾 `## 索引信息`。
+
+## [2026-06-22] 摄取 | Galaxea G0.5 VLA
+
+- 根据 `raw/Galaxea_G0_5.pdf` 生成 `wiki/EmbodiedGalaxeaG05.md`。
+- 整理 G0.5 的 VLM-as-Actor 路线、cross-embodiment ActionCodec、native CoT、visual memory、预训练数据和多 benchmark 结果。
+- 裁剪并引入 Fig.1、Fig.2、Fig.3、Fig.4/5、Table 1/2/3、Table 4、Fig.9、Fig.10/11 等关键图表，统一放入 `wiki/assets/`。
+- 将 `wiki/EmbodiedGalaxeaG05.md` 纳入 `wiki/index.md` 的“机器人控制”分类，并补充末尾 `## 索引信息`。
+
+## [2026-06-22] 维护 | 补充星海图创始人背景
+
+- 在 `wiki/巨头公司融资.md` 中新增“创始人介绍”章节。
+- 补充星海图创始团队、高继扬和赵行的教育、产业经历及路线意义。
+- 补充星海图团队与融资相关来源链接。
+
+## [2026-06-22] 维护 | 拆分商业数据口径
+
+- 更新 `wiki/巨头公司融资.md` 主表结构，将“融资 / 估值”和“销售 / 利润 / 用户量”拆成独立列。
+- 将已公开的营收、订单、出货、产能、用户量和利润数据迁移到新列。
+- 同步更新 Anthropic、OpenAI 和 Figure AI 的最新融资与业务数据口径。

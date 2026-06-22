@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420">
+  <rect width="820" height="420" fill="#ffffff"/>
+  <text x="40" y="42" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">Flow Matching: 2D straight-line path</text>
+  <line x1="90" y1="350" x2="760" y2="350" stroke="#9ca3af" stroke-width="2"/>
+  <line x1="90" y1="350" x2="90" y2="70" stroke="#9ca3af" stroke-width="2"/>
+  <text x="750" y="378" font-family="Arial, sans-serif" font-size="16" fill="#4b5563">x</text>
+  <text x="62" y="82" font-family="Arial, sans-serif" font-size="16" fill="#4b5563">y</text>
+  <line x1="150" y1="300" x2="620" y2="105" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="620,105 600,107 611,123" fill="#2563eb"/>
+  <circle cx="150" cy="300" r="10" fill="#16a34a"/>
+  <circle cx="244" cy="261" r="7" fill="#60a5fa"/>
+  <circle cx="338" cy="222" r="7" fill="#60a5fa"/>
+  <circle cx="432" cy="183" r="7" fill="#60a5fa"/>
+  <circle cx="526" cy="144" r="7" fill="#60a5fa"/>
+  <circle cx="620" cy="105" r="10" fill="#dc2626"/>
+  <text x="120" y="326" font-family="Arial, sans-serif" font-size="16" fill="#166534">source x0 = (1,1)</text>
+  <text x="572" y="83" font-family="Arial, sans-serif" font-size="16" fill="#991b1b">target x1 = (6,6)</text>
+  <text x="300" y="145" font-family="Arial, sans-serif" font-size="18" fill="#1d4ed8">velocity = x1 - x0</text>
+  <text x="360" y="248" font-family="Arial, sans-serif" font-size="16" fill="#374151">intermediate x_t</text>
+  <text x="40" y="395" font-family="Arial, sans-serif" font-size="15" fill="#6b7280">Training asks the model: given x_t and t, predict the direction that moves the point toward the target.</text>
+</svg>
